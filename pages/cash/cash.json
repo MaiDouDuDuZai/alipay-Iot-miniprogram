@@ -1,0 +1,13 @@
+{
+  "defaultTitle": "",
+  "transparentTitle": "auto",
+  "barButtonTheme": "light",
+  "usingComponents": {
+    "flex": "mini-antui/es/flex/index",
+    "flex-item": "mini-antui/es/flex/flex-item/index",
+    "list": "mini-antui/es/list/index",
+    "list-item": "mini-antui/es/list/list-item/index",
+    "mask": "mini-ali-ui/es/mask/index",
+    "loading":"mini-ali-ui/es/loading/index"
+  }
+}

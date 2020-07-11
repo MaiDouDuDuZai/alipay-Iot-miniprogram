@@ -1,0 +1,31 @@
+<view class="head">
+  <view style="text-align:center;">欢迎使用会员支付</view>
+  <image mode="scaleToFill" src="/image/crown.png" class="crown" />
+  <!-- <view style="margin-bottom:25px; color:gray">208800******3001</view> -->
+  <view style="color:gray">消费金额</view>
+  <view class="amount">￥{{amount}}</view>
+</view>
+<view class="card_info">
+  <list>
+    <list-item>
+      余额<view slot="extra">{{balance}}元</view>
+    </list-item>
+    <list-item>
+      积分<view slot="extra">{{credit}}</view>
+    </list-item>
+  </list>
+</view>
+<view class="btn-group">
+  <button size="default" type="primary" onTap="confirm" loading="{{paying}}" disabled="{{!afford}}">确认支付{{afford ? '' : '(余额不足)'}}</button>
+  <button a:if="{{is_charge == 1}}" size="default" type="ghost" onTap="showCharge">立即充值</button>
+</view>
+
+<modal
+  show="{{showCharge}}"
+  onModalClick="hideCharge"
+  onModalClose="hideCharge"
+>
+  <view slot="header">充值金额</view>
+  <charge onChargeSuccess="onChargeSuccess" />
+  <view slot="footer">取消</view>
+</modal>

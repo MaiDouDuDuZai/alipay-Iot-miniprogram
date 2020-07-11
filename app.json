@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/cash/goods/goods",
+    "pages/setting/mode/mode",
+    "pages/message/message",
+    "pages/login/login",
+    "pages/setting/setting",
+    "pages/cash/cash",
+    "pages/setting/printer/printer",
+    "pages/setting/trade/trade",
+    "pages/setting/webpanel/webpanel",
+    "pages/setting/display/display",
+    "pages/member/card/card",
+    "pages/member/cash/cash"
+  ],
+  "window": {
+    "defaultTitle": "App",
+    "allowsBounceVertical": "NO"
+  }
+}

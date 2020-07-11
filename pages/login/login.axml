@@ -1,0 +1,21 @@
+<view class="page" style="height:550px; box-sizing:border-box;" onTap="restartDelayGoBack">
+  <input-item
+    placeholder="请输入域名(不带https://)"
+    type="text"
+    value="{{API_URL}}"
+    onInput="onInputApiurl"
+  >
+    系统域名
+  </input-item>
+  <input-item
+    placeholder="请输入店员手机号"
+    type="number"
+    value=""
+    onInput="onInputPerphone"
+  >
+    店员账号
+  </input-item>
+  <button type="primary" onTap="onLogin" data-value="登录" style="margin-top:10px">登录</button>
+  <view style="text-align:center; color:#cdcdcd; padding:1em 0; font-size:small; position:absolute; left:0; bottom:0; width:100%;">IoT小程序 v{{version}}</view>
+  <view a:if={{showTiktok}} style="text-align:center; color:#cdcdcd; padding:2em; font-size:small">{{timer.tiktok.count}}s后返回主页</view>
+</view>

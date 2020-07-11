@@ -1,0 +1,19 @@
+button {
+  margin-bottom: 10px;
+}
+
+.am-card {
+  margin: 0;
+}
+
+.iconfont{ 
+  display: inline-block; width: 30px; height: 30px; margin-right: 16px; 
+  line-height: 30px; font-size: 21px; text-align: center; color:#999;
+  vertical-align: middle;
+}
+
+.modal-title{ font-size:20px; line-height: 3em; }
+.modal-content{ line-height: 1em; font-size: 16px; }
+
+.disabled view, .disabled text{ color: #ccc!important;}
+.disabled .am-list-arrow{ display: none;}

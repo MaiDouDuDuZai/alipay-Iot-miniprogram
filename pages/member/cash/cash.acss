@@ -1,0 +1,7 @@
+page{ background: #fff;}
+.head{ text-align: center;}
+.head .crown{ display: block; width: 40px; height: 40px; margin: 10px auto 28px; border: 3px solid #ffbf0d; border-radius: 50%;}
+.head .amount{ font-size: 35px; font-weight: bold; margin-top:5px;}
+.card_info{ margin:55px 20px}
+.btn-group{ position: absolute; bottom:20px; width: 100%;}
+.btn-group button{ margin:0 20px 15px;}

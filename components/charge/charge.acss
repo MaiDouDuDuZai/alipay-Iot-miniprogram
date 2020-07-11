@@ -1,0 +1,6 @@
+.plan{ background: #fff; padding: 30px 0 15px 0;}
+.plan .btn{ border: 1px solid #E93035; color:#E93035; margin-bottom:15px; font-size: 16px;}
+.plan .btn{ height: 45px; line-height: 45px; text-align: center;}
+.plan .btn image{ width:25px; height: 25px; vertical-align: middle; margin-right:5px;}
+.plan .btn text{ font-weight: bold; font-size: large; padding: 0 1px;}
+.plan .btn .a-loading-item::before{ background-color: #E93035;}

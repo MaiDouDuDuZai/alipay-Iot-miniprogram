@@ -1,0 +1,11 @@
+{
+  "defaultTitle": "交易记录",
+  "barButtonTheme": "default",
+  "usingComponents":{
+    "list": "mini-antui/es/list/index",
+    "list-item": "mini-antui/es/list/list-item/index",
+    "popup": "mini-antui/es/popup/index",
+    "filter": "/components/filter/index",
+    "filter-item": "/components/filter/filter-item/index"
+  }
+}

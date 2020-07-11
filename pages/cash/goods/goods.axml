@@ -1,0 +1,181 @@
+<view class="goods-container">
+  <view class="viewCate" a:if="{{viewMode==1}}">
+    <vtabs
+      tabs="{{cats}}"
+      onTabClick="onTabClick"
+      onChange="onTabChange"
+      activeTab="{{activeTab}}"
+    >
+      <vtab-content a:for="{{cats}}" a:for-item="cat" anchor="{{cat.anchor}}">
+        <view class="list-title">
+          {{cat.cat_name}}
+        </view>
+        <list>
+          <block a:for="{{cat.goods}}" a:key="goods_id">
+            <list-item className="goods-item">
+              <view slot="prefix">
+                <image mode="aspectFill" src="{{item.cover_pic}}"/>
+              </view>
+              {{item.goods_name}}
+              <view class="am-list-brief brief">
+                {{item.desc}}
+              </view>
+              <view slot="extra">
+                <text class="price">￥{{item.price}}</text>
+                <block a:if="{{item.use_attr == '0'}}">
+                  <text 
+                    class="iconfont icon-minus card-button" 
+                    a:if="{{item.cart_num}}" 
+                    onTap="minusCart" 
+                    data-goods_id="{{item.goods_id}}"
+                  ></text>
+                  <text slot="num" class="card-num" a:if="{{item.cart_num}}">{{item.cart_num}}</text>
+                  <text 
+                    class="iconfont icon-add_fill card-button" 
+                    onTap="addCart" 
+                    data-goods_id="{{item.goods_id}}"
+                  ></text>
+                </block>
+                <block a:else>
+                  <button 
+                    size="mini" 
+                    class="a-button-primary sku-pick-btn" 
+                    onTap="showSkuPanel" 
+                    data-goods_id="{{item.goods_id}}"
+                  >选规格</button>
+                  <badge a:if="{{item.cart_num > 0}}" text="{{item.cart_num}}" className="cart-num-badge"/>
+                </block>
+              </view>
+            </list-item>
+          </block>
+        </list>
+      </vtab-content>
+    </vtabs>
+  </view>
+
+  <scroll-view class="viewList" scroll-y="{{true}}" a:if="{{viewMode==2}}">
+    <list>
+      <block a:for="{{goods}}" a:key="goods_id">
+        <list-item className="goods-item">
+          <view slot="prefix">
+            <image mode="aspectFill" src="{{item.cover_pic}}"/>
+          </view>
+          {{item.goods_name}}
+          <text class="price">{{item.price}}元/{{item.unit}}</text>
+          <view slot="extra">
+            <block a:if="{{item.use_attr == '0'}}">
+              <text 
+                class="iconfont icon-minus card-button" 
+                a:if="{{item.cart_num}}" 
+                onTap="minusCart" 
+                data-goods_id="{{item.goods_id}}"
+              ></text>
+              <text slot="num" class="card-num" a:if="{{item.cart_num}}">{{item.cart_num}}</text>
+              <text 
+                class="iconfont icon-add_fill card-button" 
+                onTap="addCart" 
+                data-goods_id="{{item.goods_id}}"
+              ></text>
+            </block>
+            <block a:else>
+              <button 
+                size="mini" 
+                class="a-button-primary sku-pick-btn" 
+                onTap="showSkuPanel" 
+                data-goods_id="{{item.goods_id}}"
+              >选规格</button>
+              <badge a:if="{{item.cart_num > 0}}" text="{{item.cart_num}}" className="cart-num-badge"/>
+            </block>
+          </view>
+        </list-item>
+      </block>
+    </list>
+  </scroll-view>
+</view>
+
+<view class="cart" a:if="{{cartPanel.show}}">
+  <view class="mask" onTap="toggleCart"></view>
+  <list className="cart-list">
+    <list-item 
+      a:for="{{cartPanel.cart}}" a:key="goods_id"
+      icon="{{item.cover_pic}}" 
+    >
+      <view slot="prefix">
+        <image mode="aspectFill" src="{{item.cover_pic}}" style="display:block;width:25px;height:25px;" />
+      </view>
+      {{item.goods_name}}
+      <text style="color:#ee0a24">￥{{item.price}}</text>
+      <view slot="extra">
+        <text 
+          class="iconfont icon-minus card-button" 
+          a:if="{{item.cart_num}}" 
+          onTap="minusCart" 
+          data-goods_id="{{item.goods_id}}"
+          data-attr="{{item.attr}}"
+        ></text>
+        <text class="card-num" a:if="{{item.cart_num}}">{{item.cart_num}}</text>
+        <text 
+          class="iconfont icon-add_fill card-button" 
+          onTap="addCart" 
+          data-goods_id="{{item.goods_id}}"
+          data-attr="{{item.attr}}"
+        ></text>
+      </view>
+    </list-item>
+  </list>
+</view>
+
+<view class="submit-bar">
+  <view class="cart-button" onTap="toggleCart">
+    <icon 
+      info="{{total_num ? total_num : ''}}" 
+      class="iconfont icon-cart {{cartPanel.cart.length ? '' : 'disabled'}}"
+    />
+    <text class="dot" a:if="{{total_num}}">{{total_num}}</text>
+  </view>
+  <text class="price">￥{{total_price}}</text>
+  <button onTap="onSubmit" class="submit-button">结 算</button>
+</view>
+
+<modal 
+  show="{{ skuPanel.show }}" 
+  onModalClose="hideSkuPanel"
+>
+   <view slot="header" style="text-align:left; padding-left:16px;">{{skuPanel.title}}</view>
+   <view class="sku-panel">
+    <view a:for="{{skuPanel.group}}" a:for-index="group_name" a:for-item="attrs">
+      <view style="color:rgba(0,0,0,.5); padding:6px 0 5px;">{{group_name}}</view>
+      <button 
+        a:for="{{attrs}}"
+        a:for-index="attr_index"
+        a:for-item="attr" 
+        data-group_name="{{group_name}}"
+        data-attr_index="{{attr_index}}"
+        onTap="pick_attr" 
+        class="{{attr.active ? 'a-button-primary' : ''}}"
+        size="mini"
+        style="margin-right:8px;"
+      >{{attr.name}}</button>
+    </view>
+    <view style="padding-top:12px;"><text style="color:rgba(0,0,0,.5)">当前规格：</text>{{skuPanel.cur_sku.path}}</view>
+   </view>
+   <view slot="footer" style="text-align:left; padding-left:16px;">
+    <text style="color: #ee0a24;">￥{{skuPanel.cur_sku.data.price}}</text>
+    <view style="float:right; padding-right:16px;">
+      <text 
+        class="iconfont icon-minus card-button" 
+        a:if="{{skuPanel.cur_sku.data.cart_num}}" 
+        onTap="minusCart" 
+        data-goods_id="{{skuPanel.goods_id}}"
+        data-attr="{{skuPanel.cur_sku.path}}"
+      ></text>
+      <text slot="num" class="card-num" a:if="{{skuPanel.cur_sku.data.cart_num}}">{{skuPanel.cur_sku.data.cart_num}}</text>
+      <text 
+        class="iconfont icon-add_fill card-button" 
+        onTap="addCart" 
+        data-goods_id="{{skuPanel.goods_id}}"
+        data-attr="{{skuPanel.cur_sku.path}}"
+      ></text>
+    </view>
+   </view>
+</modal>

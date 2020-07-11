@@ -1,0 +1,58 @@
+<button type="primary" onTap="toggleFilter">筛选</button>
+<filter show="{{showFilter}}" max="{{10000}}" onChange="onFilterConfirm" onReset="onFilterReset" onMaskTap="toggleFilter">
+  <list-item>
+    <text class="title">支付通道</text>
+    <filter-item text="支付宝" field="trade_gate" value="alipay" />
+    <filter-item text="微信" field="trade_gate" value="weixin" />
+  </list-item>
+  <list-item>
+    <text class="title">支付方式</text>
+    <filter-item text="扫码 " field="trade_type" value="bar_code" />
+    <filter-item text="刷脸" field="trade_type" value="face_code" />
+  </list-item>
+  <list-item>
+    <text class="title">时间范围</text>
+    <text data-name="create_time_from" class="time create_time_from {{create_time_from?'':'empty'}}" onTap="datePicker" placeholder="开始时间">{{create_time_from}}</text>
+    <text class="breakline"> — </text> 
+    <text data-name="create_time_to" class="time create_time_to {{create_time_to?'':'empty'}}" onTap="datePicker" placeholder="结束时间">{{create_time_to}}</text>
+  </list-item>
+</filter>
+<view>
+		<list loadMore="{{loadMore}}">
+			<block a:for="{{items}}">
+				<list-item
+          className="{{item.sticky ? 'am-list-sticky' : ''}}"
+					thumb="{{item.thumb}}"
+					arrow="{{item.arrow}}"
+					index="{{index}}"
+					onClick="onItemClick"
+					key="items-{{index}}"
+					last="{{index === (items.length - 1)}}"
+          data-out_trade_no="{{item.out_trade_no}}"
+				>
+					{{( item.trade_gate == 'alipay' ? '支付宝' : '微信' ) + ' / ' + ( item.trade_type == 'face_code' ? '刷脸' : '扫码' )}}
+					<view class="am-list-brief">{{item.time_create_format}}</view>
+					<view slot="extra">
+            {{'￥' + item.total_amount}} 
+            <text class="{{item.trade_status}}">{{{
+              SUCCESS: '交易成功', 
+              TRADE_SUCCESS: '交易成功', 
+              REVOKED: '已撤销',
+              CLOSED: '交易关闭',
+              TRADE_CLOSED: '交易关闭',
+              USERPAYING: '等待支付',
+            }[item.trade_status]}}</text>
+          </view>
+			 </list-item>
+			</block> 
+		</list>
+</view>
+<popup show="{{showBottom}}" position="bottom" onClose="onPopupClose" animation="{{false}}">
+  <view class="box bottom">
+    <text>订单号: {{selected_order.out_trade_no}}</text>
+    <view class="operation">
+      <button type="default" onTap="reprint" style="margin-right:10px">补打</button>
+      <button type="warn" onTap="refund">退款</button>
+    </view>
+  </view>
+</popup>

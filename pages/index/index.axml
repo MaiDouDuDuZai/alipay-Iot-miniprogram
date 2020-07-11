@@ -1,0 +1,47 @@
+<video a:if="{{adsType=='video'}}"
+  id="myVideo" 
+  style="width:400px;height:640px"
+  src="{{video.src}}" 
+  controls="{{false}}"
+  loop="{{true}}"
+  muted="{{false}}"
+  show-fullscreen-btn="{{false}}"
+  show-play-btn="{{false}}"
+  show-center-play-btn="{{false}}"
+  object-fit="fill"
+  autoplay="{{true}}"
+  initial-time="0"
+  onTap="wakeup"
+  onError="onError"
+  enable-progress-gesture="{{false}}"
+/>
+<view a:else class="swiper-container">
+  <swiper duration="{{duration}}" interval="{{interval}}" autoplay="{{autoplay}}" circular="{{circular}}" class="swiper-item">
+      <swiper-item a:for="{{swiperData}}" a:for-item="image">
+        <image src="{{image}}" data-link="" class="swiper-image" onTap="swiperClick" style="" />
+      </swiper-item>
+  </swiper>
+</view>
+<view class="tip" hidden="{{isSleep && adsType=='video'}}">
+  <flex>
+    <block a:if="{{mode.value == 1}}">
+      <view a:if="{{adsType=='image' && !merchant.hasMemberCard}}" class="bg">
+        <text class="large">等待收银员点击键盘收款</text>支持刷脸和扫码支付
+      </view>
+    </block>
+    <block a:else>
+      <flex-item>
+        <navigator url="{{mode.url}}" hover-class="navigator-hover">{{mode.name}}</navigator>
+      </flex-item>
+    </block>
+    <block a:if="{{merchant.hasMemberCard}}">
+      <flex-item>
+        <button size="default" type="primary" onTap="joinMember">领取会员卡</button>
+      </flex-item>
+    </block>
+  </flex>
+</view>
+
+<view a:if="{{isWebsocketOnline}}" class="iconfont icon-yunlaba websocket-online">
+  <text>{{voiceQueueLength || ''}}</text>
+</view>

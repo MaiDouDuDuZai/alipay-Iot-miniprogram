@@ -1,0 +1,11 @@
+page{ background: #fff; }
+.am-list{ margin:0px auto; width:90%;}
+.am-list-line{ min-height: 34px; }
+.am-list-line::before{ display:none; }
+.am-list-line::after{ display:none; }
+.am-list-content{ font-size: 13px;}
+.am-list-extra{ font-size: 13px;}
+.am-list-item{ padding-left: 0;}
+.am-list-item::before{ display:none; }
+.am-list-item::after{ display:none; }
+.am-list-content{ padding-left: 15px;}

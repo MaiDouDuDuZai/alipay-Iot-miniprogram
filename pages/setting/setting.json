@@ -1,0 +1,10 @@
+{
+  "defaultTitle": "设置",
+  "barButtonTheme": "default",
+  "usingComponents":{
+    "card": "mini-antui/es/card/index",
+    "list": "mini-antui/es/list/index",
+    "list-item": "mini-antui/es/list/list-item/index",
+    "modal": "mini-antui/es/modal/index"
+  }
+}

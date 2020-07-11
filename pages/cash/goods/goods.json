@@ -1,0 +1,13 @@
+{
+  "defaultTitle": "自助下单",
+  "barButtonTheme": "default",
+  "usingComponents": {
+    "vtabs": "mini-antui/es/vtabs/index",
+    "vtab-content": "mini-antui/es/vtabs/vtab-content/index",
+    "card": "mini-antui/es/card/index",
+    "modal": "mini-antui/es/modal/index",
+    "list": "mini-antui/es/list/index",
+    "list-item": "mini-antui/es/list/list-item/index",
+    "badge": "mini-antui/es/badge/index"
+  }
+}

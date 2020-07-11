@@ -1,0 +1,12 @@
+page{ height: 100vh; padding: 0 10px; background: #e4e4e4; overflow: hidden;}
+.card{ position: relative; height: 212px; background-size: 100% 100%; border-radius: 11px; background-color: gray;}
+.card .sub{ color: #fff; padding: 10px; line-height: 30px;}
+.card .sub .logo{ float: left; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px; vertical-align: middle;}
+.card .sub > text{ display: block; }
+.card .sub .sub_title{ margin-top:0px; font-size: 10px; background-color: rgba(0,0,0,0.2); padding: 0 3px; border-radius: 2px;}
+.info{ background: #fff; border-radius: 11px 11px 0 0; height: 9999px;}
+.info .balance{ padding: 30px 0; font-size: 16px; color: gray;}
+.info .balance view{ text-align: center; display: block; width: 100%;}
+.info .balance view text{ display: block; color: #3399cc; font-size: 28px; padding-top:10px;}
+.info .balance view:first-child{ border-right: 1px solid #ccc;}
+.qrcode-btn{ text-align:center; left:0px; width:100%; text-decoration:underline; color:rgb(51, 153, 204); bottom:25px; position:absolute; }

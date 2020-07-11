@@ -1,0 +1,88 @@
+page{background:#fafafa;}
+
+.goods-container{ box-sizing:border-box; height:100vh; padding-bottom:50px;}
+.viewCate{ height: 100%;}
+.viewCate .am-vtabs{ height: 100%;}
+.viewCate .cart-num-badge{ position:absolute; right:0px; bottom:15px;}
+.viewList{ height: 100%;}
+.viewList .am-list-body{ display:flex; flex-wrap:wrap; padding:8px 0; background: #fff;}
+.viewList .goods-item{ width:176px; }
+.viewList .goods-item:nth-child(2n-1){ padding-right:8px;}
+.viewList .goods-item:nth-child(2n){ padding-left:8px;}
+.viewList .am-list-prefix{ margin-right:8px;}
+.viewList .goods-item .am-list-extra{ height: auto;}
+.viewList .goods-item .price{ position: static; display: block; width: 100%; text-align: left;}
+.viewList .cart-num-badge{ position:absolute; right:0px; bottom:22px;}
+
+.card-num{ display: inline-block; line-height: 27px; font-size:16px; padding: 0 .5em; vertical-align: middle;}
+.card-button{ height: 23px; line-height: 23px; font-size:23px; vertical-align: middle; color:rgb(16, 142, 233);}
+
+.goods-item{ padding: 8px 16px;}
+.goods-item .am-list-line{ align-items: stretch; padding: 0;}
+.goods-item .am-list-content{ font-size: 14px; padding:0; }
+.goods-item .am-list-extra{ position: absolute; right: 0; bottom: 0; width:100%; padding: 0; height: 23px; line-height: 23px; overflow: visible;}
+.goods-item image{ width:80px; height: 80px; }
+.goods-item .brief{ font-size:10px; word-break: break-all; word-wrap: break-word; white-space: pre-line; padding-bottom:23px; letter-spacing: 1px;}
+.goods-item .price{ color: #ee0a24; height:23px; position:absolute; bottom:0px; line-height:23px; left:0px;}
+.goods-item .am-list-line-bottom{ display: none;}
+.list-title{border-bottom: 1px solid #eee; box-sizing: border-box; padding:.5em 0; margin:5px 16px; color:#555;}
+
+.payOption{display: flex;align-items: center;justify-content: center;height: 100%;}
+.payOption > view{background-color: #fff; padding:20px 30px; border-radius:15px;}
+.payOption button{font-size: 22px;padding:0 1em;letter-spacing: 5px;}
+.payOption button icon{ margin-right:.5em; font-size: 22px; width: 25px;}
+
+.am-vtabs-bar, .am-vtabs-bar-tab{ width:100px;}
+.am-vtabs-content-wrap .am-list-body::before,
+.am-vtabs-content-wrap .am-list-body::after{ display: none; }
+
+.cart{ position: fixed; width:100%; height: 100%; top:0;}
+.cart .mask{ width: 100%; height: 526px; background:rgba(0,0,0,.5);}
+.cart .cart-list{
+  position: absolute; 
+  bottom:50px; 
+  width:100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 10px 0;
+  background: #fff;
+  border-top: 15px solid rgb(16, 142, 233);
+}
+.cart .cart-list .am-list-body::before,
+.cart .cart-list .am-list-body::after{ display: none;}
+.cart .cart-list .am-list-item{ padding-top:8px; padding-bottom:8px;}
+.cart .cart-list .am-list-line{ min-height: 0;}
+.cart .cart-list .am-list-content{ padding: 0; font-size: 14px;}
+.cart .cart-list .am-list-extra{ padding: 0;}
+.cart .cart-list .iconfont{ color: rgb(16, 142, 233); font-size: 18px; vertical-align: middle;}
+
+.submit-bar{ position: absolute; bottom: 0; width:100%; height: 50px; line-height: 50px; text-align: right; overflow:hidden; background:#fff;}
+.submit-button{ display: block; float: right; width:7em; height: 100%; line-height: 50px; padding:0 1.5em; background: rgb(16, 142, 233); border: none; color:#fff; font-size: 14px; border-radius: 0;}
+.submit-bar .cart-button{ float: left; position: relative; margin:2.5px 0 0 20px;}
+.submit-bar .cart-button .icon-cart{ 
+  background: rgb(16, 142, 233); color: #fff;
+  width:45px; height:45px;
+  border-radius:50%;
+  line-height:45px;
+  text-align:center;
+  font-size:25px;
+}
+.submit-bar .cart-button .icon-cart.disabled{ background:rgb(136, 136, 136);}
+.submit-bar .cart-button .icon-cart::before{ margin: 0; padding: 0;}
+.submit-bar .cart-button .dot{
+  background:red;
+  top:0px;
+  left:35px;
+  position:absolute;
+  color:rgb(255, 255, 255);
+  padding:2px 4px;
+  font-size:10px;
+  line-height:1em;
+  text-align:center;
+  border-radius:7px;
+}
+.submit-bar .price{ font-size: 17px; color:rgb(238, 10, 36); padding-right:1.5em;}
+.submit-bar .price::before{ content: '合计：'; color: rgb(136, 136, 136); font-size: small;}
+
+.sku-panel{ text-align: left;}
+.sku-pick-btn{ padding:0 1em; padding:0px 1em; font-size:12px; line-height:22px; border-radius:12px; height:24px;}

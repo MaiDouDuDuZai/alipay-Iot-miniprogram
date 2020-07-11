@@ -1,0 +1,72 @@
+.dyt-list {
+  margin-top: 0;
+}
+.dyt-list .am-list-item-thumb {
+  border-radius: 5px;
+}
+.dyt-list .am-list-brief {
+  color: #909090;
+}
+
+.dyt-list .am-list-extra {
+  color: #000;
+}
+
+.am-list-sticky{
+  position: sticky;
+  top: 0;
+  background-color: #f7f7f7;
+  z-index: 2;
+  padding-left: 0;
+}
+.am-list-sticky .am-list-line{
+  min-height: unset;
+}
+.am-list-sticky .am-list-line .am-list-content{
+  padding: 16px 16px 8px;
+  font-size: 14px;
+  line-height: 1.15;
+  color: rgb(136, 136, 136);
+}
+.highlight{ z-index: 4;}
+
+.box.bottom {
+  background-color: #fff;
+  padding: 10px 10px 50px;
+}
+.box text{
+  line-height: 1.5;
+  font-size:18px;
+  display:block;
+  padding:1em 1em 2em;
+}
+.box .operation{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box .operation{
+  display: flex;
+}
+.box .operation button{
+  width: 50%;
+}
+.am-popup-mask{ z-index: 3;}
+.am-popup-content{ z-index: 4;}
+
+.am-list-extra{ font-size: 17px;}
+.am-list-extra text{ display: block; font-size: 14px;}
+text.SUCCESS{ color: green }
+text.TRADE_SUCCESS{ color: green }
+text.REVOKED{ color: #ccc }
+text.CLOSED{ color: #ccc }
+text.TRADE_CLOSED{ color: #ccc }
+text.USERPAYING{ color: #e69f2b }
+
+.am-filter-list .am-list-item{ padding-left: 0 }
+.am-filter-list .am-list-item text.title{ display: block; padding-left: 6px; font-size: small; color:#777; line-height: 2em;}
+.am-filter-list .am-list-item text.time{ display: inline-block; width:150px; height: 29px; line-height: 29px; margin:7px 6px; background:rgb(245, 245, 245); font-size:14px; vertical-align: middle; text-align: center;}
+.am-filter-list .am-list-item text.time.empty::before{ display: block; color:rgb(205,205,205)}
+.am-filter-list .am-list-item text.time.create_time_from.empty::before{ content: '开始时间';}
+.am-filter-list .am-list-item text.time.create_time_to.empty::before{ content: '结束时间';}
+.am-filter-list .am-list-item text.breakline{ color:#aaa; }

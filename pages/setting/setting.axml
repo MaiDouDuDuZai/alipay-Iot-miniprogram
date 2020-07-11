@@ -1,0 +1,49 @@
+<card
+  thumb="{{thumb}}"
+  title="{{person.per_name}}"
+  subTitle="{{person.per_phone}}"
+  onClick="openModal"
+/>
+<view style="margin-top: 10px;" />
+<list>
+  <!-- <list-item arrow="{{true}}" onClick="gotoPanel">
+    <text class="iconfont icon-transaction"></text> 管理平台
+  </list-item> -->
+  <list-item arrow="{{true}}" onClick="gotoTrade">
+    <text class="iconfont icon-transaction"></text> 交易记录
+  </list-item>
+  <list-item arrow="{{true}}" onClick="gotoMode">
+    <text class="iconfont icon-xiadan"></text>收银模式
+  </list-item>  
+  <list-item arrow="{{true}}" onClick="gotoPrinter">
+    <text class="iconfont icon-printer"></text> 打印机设置
+  </list-item>
+  <list-item arrow="{{true}}" onClick="gotoDisplay">
+    <text class="iconfont icon-display"></text> 显示设置
+  </list-item>
+  <list-item arrow="{{true}}" onClick="clearCache">
+    <text class="iconfont icon-qingchu"></text>清除缓存
+  </list-item>
+</list>
+<view style="margin-top: 10px;" />
+<button style="color:#e94f4f;border:none;" onTap="logout">退出登录</button>
+<view style="text-align:center; color:#cdcdcd; padding:1em; font-size:small">IoT小程序 v{{version}}</view>
+
+<modal
+  show="{{modalOpened}}"
+  onModalClick="onModalClick"
+  onModalClose="onModalClose"
+>
+  <view style="margin:0px 0 10px 0; padding:0 1em 1em; text-align:left;">
+    <view class="modal-title">登录信息</view>
+    <view class="modal-content">
+      <text>
+        系统域名：{{config.API_URL}}\n
+        店员名称：{{person.per_name}}\n
+        店员手机：{{person.per_phone}}\n
+        商户名称：{{merchant.merchant_name}}\n
+        店铺名称：{{person.store_name}}
+      </text>
+    </view>
+  </view>
+</modal>

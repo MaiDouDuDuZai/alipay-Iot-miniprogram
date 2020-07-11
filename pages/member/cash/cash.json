@@ -1,0 +1,10 @@
+{
+  "defaultTitle": "",
+  "barButtonTheme": "default",
+  "usingComponents":{
+    "list": "mini-antui/es/list/index",
+    "list-item": "mini-antui/es/list/list-item/index",
+    "charge": "/components/charge/charge",
+    "modal": "mini-antui/es/modal/index"
+  }
+}

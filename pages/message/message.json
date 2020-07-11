@@ -1,0 +1,11 @@
+{
+  "defaultTitle": "",
+  "barButtonTheme": "default",
+  "transparentTitle": "auto",
+  "titlePenetrate": "YES",
+  "usingComponents": {
+    "message": "/components/message/index",
+    "list": "mini-antui/es/list/index",
+    "list-item": "mini-antui/es/list/list-item/index"
+  }
+}

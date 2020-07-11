@@ -1,0 +1,19 @@
+export default {
+    card_activateurl: '/pay/user/alipay_card_activateurl', //会员卡领卡链接
+    pay_order: '/pay/mall/pay_order', //支付+生成订单
+    pay: '/pay/cash/pay', //支付
+    refund: '/pay/cash/refund', //退款
+    get_out_trade_no_mall: '/pay/mall/index', //获取订单号(前缀D)
+    get_out_trade_no_cash: '/pay/cash/index', //获取订单号(前缀P)
+    query: '/pay/cash/query', //支付状态查询
+    check: '/pay/cash/check', //店员密码验证
+    slider: '/pay/cash/slider', //获取广告
+    login: '/pay/cash/login', //店员登录
+    goods_cat: '/pay/mall/goods_cat', //商品分类
+    goods: '/pay/mall/goods', //商品列表
+    goods_detail: '/pay/mall/goods_detail', //商品详情
+    order: '/pay/cash/order', //交易列表
+    shortlink: '/home/url/create', //短链接
+    alipay_card_userinfo: '/pay/user/alipay_card_userinfo', //获取会员信息
+    alipay_card_open: '/pay/user/alipay_card_open', //支付宝开通会员
+};

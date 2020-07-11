@@ -1,0 +1,11 @@
+{
+  "defaultTitle": "",
+  "transparentTitle": "auto",
+  "barButtonTheme": "default",
+  "usingComponents":{
+    "flex": "mini-antui/es/flex/index",
+    "flex-item": "mini-antui/es/flex/flex-item/index",
+    "charge": "/components/charge/charge",
+    "modal": "mini-antui/es/modal/index"
+  }
+}

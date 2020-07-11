@@ -1,0 +1,45 @@
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.swiper-item {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.swiper-image {
+  width: 100vw;
+  height: 100.1vh;
+  display: block;
+}
+
+.tip {
+  color: #555;
+  text-align: center;
+  position: absolute;
+  width: 380px; padding: 0 10px;
+  left: 0; bottom: 0;
+  letter-spacing: .1em; font-size: 20px;
+}
+.tip .bg { 
+  position: absolute; left: 0; bottom:0;
+  width:100%; padding: 40px 0 30px;
+  background-image:url("/image/index_bottom.png");
+  background-size:cover;
+}
+.tip text.large{
+  display: block; margin-bottom:8px;
+  font-size: 24px; color:#00a0e9;
+}
+.tip navigator, .tip button{
+  background:rgb(16, 142, 233);
+  color:rgb(255, 255, 255);
+  line-height:50px;
+  height:50px; margin: 0 auto 30px;
+}
+.tip .navigator-hover{
+  background-color: lightskyblue;
+}
+.websocket-online{ color: #fff; position: fixed; left: 10px; top: 0px; line-height: 44px;}
+.websocket-online text{ top:2px; position:relative; font-size:8px; }

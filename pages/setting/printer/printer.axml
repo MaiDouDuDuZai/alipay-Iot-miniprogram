@@ -1,0 +1,23 @@
+<list class="list">
+  <view slot="header">已连接打印机</view>
+  <block a:if="{{printer && printer.length}}">
+    <block a:for="{{printer}}">
+      <list-item>
+        {{item.name}}<view slot="extra">{{item.statusReason || ''}}</view>
+      </list-item>
+    </block>
+  </block>
+  <block a:else>
+    <list-item>无<view slot="extra">未连接</view></list-item>
+  </block>
+</list>
+
+<!-- <list class="setting">
+  <list-item disabled="{{true}}">
+    打印联数
+    <view slot="extra">
+      <stepper onChange="onPrintMultiChange" step="{{1}}" showNumber readOnly="{{false}}" value="{{printMulti}}" min="{{1}}" max="{{99}}" />
+    </view>
+  </list-item>
+</list> -->
+<button type="default" onTap="printTest" style="margin-top:10px">打印测试</button>

@@ -1,0 +1,7 @@
+.page-section{
+  background:#fff;
+  padding: .5em 1.5em 1.5em;
+}
+.page-section-title{
+  line-height: 3em;
+}

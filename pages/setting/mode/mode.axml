@@ -1,0 +1,25 @@
+<view style="margin-top: 10px;" />
+<radio-group class="radio-group" onChange="radioChange" name="mode">
+  <list>
+    <list-item a:for="{{items}}">
+      {{item.name}}
+      <radio slot="extra" value="{{item.value}}" checked="{{item.checked}}" disabled="{{item.disabled}}" />
+    </list-item>
+  </list>
+</radio-group>
+
+<block a:if="{{mode==2}}">
+  <view class="page-section-title">菜单样式</view>
+  <radio-group class="radio-group" onChange="viewModeChange" name="viewMode">
+    <list>
+      <list-item>
+        分类
+        <radio slot="extra" value="1" checked="{{items[1].viewMode==1}}" />
+      </list-item>
+      <list-item>
+        列表
+        <radio slot="extra" value="2" checked="{{items[1].viewMode==2}}" />
+      </list-item>
+    </list>
+  </radio-group>
+</block

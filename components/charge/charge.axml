@@ -1,0 +1,19 @@
+<view class="plan">
+  <block a:if="{{card_charge.length}}">
+    <button 
+      a:for="{{card_charge}}" 
+      class="btn" 
+      onTap="confirm" 
+      loading="{{charge_id == item.id && paying}}"
+      data-id="{{item.id}}"
+      data-pay_amount="{{item.pay_amount}}"
+      data-send_amount="{{item.send_amount}}"
+    >
+      <image mode="scaleToFill" src="/image/gift.png"/>
+      充<text>{{item.pay_amount}}</text>送<text>{{item.send_amount}}</text>
+    </button>
+  </block>
+  <block a:else>
+    暂无充值方案
+  </block>
+</view>

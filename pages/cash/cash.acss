@@ -1,0 +1,45 @@
+page{ background: #fff; }
+
+text.amount{ 
+  display: block; width:350px; margin:0px auto 30px; padding:134px 0 20px;
+  font-size: 45px; text-align: center; text-indent:-10px;
+  border-bottom:1px solid rgba(0, 0, 0, 0.1);
+}
+text.amount-with-goods{
+  padding-top: 134px;
+}
+text.amount::after{ 
+  content: '付款金额'; display: block; 
+  font-size: 15px; color: #888; text-indent: 0; font-weight: normal;
+  position: absolute; left: 50%; margin-left: -2em; top: 119px;
+}
+text.amount-with-goods::after{
+  top: 119px;
+}
+text.amount::before{ 
+  content: '￥'; font-size: 25px; font-weight: normal; padding-right: 5px;
+}
+.img_show_ur_barcode{ height: 250px; background:url(/image/cash.jpg) no-repeat center center; background-size: contain;}
+
+.buttons{ display: block; position: absolute; left: 0; bottom: 25px; width: 100%;}
+.buttons button{ width:80%; margin:0 auto; border-radius: 6px; letter-spacing: 2px;}
+.buttons button .iconfont{ margin-right:7px; font-size: large;}
+.buttons .am-flexbox-item{ width:100%; margin: 0;}
+
+.goods{ height: 220px; margin: 0 30px; border-top:1px solid rgba(0,0,0,0.1); border-bottom: 1px solid rgba(0,0,0,0.1);}
+.goods .am-list-body::before,
+.goods .am-list-body::after{ display: none;}
+.goods .am-list-item{ padding-top:8px; padding-bottom:8px;}
+.goods .am-list-line{ min-height: 0;}
+.goods .am-list-content{ padding: 0; font-size: 14px;}
+.goods .am-list-extra{ padding: 0;}
+
+.text-btn{ text-align:center; color:#888; line-height: 47px; margin-top:10px; }
+.text-btn {position: fixed; left: 10px; top:33px; color:rgb(153, 153, 153);}
+.text-btn::before { content: 'ｘ '; font-size: large;}
+
+.toptip{ position: fixed; left: 0; top: 0; width: 100%; color:#fff; font-size: 13px; height: 44px; line-height: 53px; text-align: center; 
+  background: url(image/up.png) no-repeat center 3px, url(image/scanhere.png) no-repeat center top /contain;}
+
+.loading-mask .content{position:fixed; left:50%; top: 50%; margin: -55px 0 0 -50px; background:rgba(0,0,0,0.45); width:100px; padding: 10px 10px 15px; border-radius:10px; z-index:2; text-align: center;}
+.loading-mask .loading-icon{ font-size: 60px; display: block;}

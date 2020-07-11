@@ -1,0 +1,33 @@
+<view style="padding-top:44px;">
+  <message
+    title="{{title}}"
+    subTitle="{{subTitle}}"
+    type="{{type}}" 
+    mainButton="{{messageButton.mainButton}}" 
+    onTapMain="onTapMain"
+  >
+  </message>
+  <block a:if="{{mchHasMemberCard && order.status == 2 && order.trade_type == 'card'}}">
+    <list a:if="{{member}}">
+      <!-- 
+      <list-item>
+        姓名<view slot="extra">{{member.username}}</view>
+      </list-item>
+      <list-item a:if="{{member.phone}}">
+        手机号<view slot="extra">{{member.phone.replace(/^(\d{3}).*(\d{4})$/, '$1****$2')}}</view>
+      </list-item>
+      -->
+      <list-item>
+        卡号<view slot="extra">{{member.card_no.replace(/^(\d{3}).*(\d{4})$/, '$1****$2')}}</view>
+      </list-item>
+      <list-item>
+        积分<view slot="extra">{{member.credit}}</view>
+      </list-item>
+      <list-item>
+        余额<view slot="extra">￥{{member.balance}}</view>
+      </list-item>
+    </list>
+  </block>
+
+  <image mode="aspectFill" src="{{ads}}" style="width:800rpx; height:400rpx; position:absolute; bottom:0;" />
+</view>

@@ -1,0 +1,47 @@
+<view class="card" style="background-image:url({{card_bg}}); margin-top: {{titleBarHeight + statusBarHeight}}px;">
+  <view class="sub">
+    <image class="logo" mode="scaleToFill" src="{{card_logo}}" />
+    <text>
+      {{card_title}}
+      <!-- <text class="sub_title">{{card_sub_title}}</text> -->
+    </text>
+  </view>
+</view>
+<view class="info">
+  <flex class="balance">
+    <flex-item>
+      <view>
+        积分
+        <text>{{credit}}</text>
+      </view>
+    </flex-item>
+    <flex-item>
+      <view>
+        余额
+        <text>{{balance}}元</text>
+      </view>
+    </flex-item>
+  </flex>
+  <button a:if="{{is_charge == 1}}" size="default" type="ghost" onTap="showCharge" style="margin:0 10px; border-radius:5px;">立即充值</button>
+  <view onTap="showCardActiveQrcode" class="qrcode-btn">领取到支付宝卡包</view>
+</view>
+
+<modal
+  show="{{showCharge}}"
+  onModalClick="hideCharge"
+  onModalClose="hideCharge"
+>
+  <view slot="header">充值金额</view>
+  <charge onChargeSuccess="onChargeSuccess" />
+  <view slot="footer">取消</view>
+</modal>
+
+<modal
+  show="{{showCardActiveQrcode}}"
+  onModalClick="hideCardActiveQrcode"
+  onModalClose="hideCardActiveQrcode"
+  topImage="{{qrcode_alipay}}"
+>
+  <view slot="header">手机支付宝扫码领卡</view>
+  <view slot="footer">取消</view>
+</modal>

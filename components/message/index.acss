@@ -1,0 +1,40 @@
+.am-message {
+	background-color: #fff;
+	padding: 30px 15px;
+	text-align: center;
+	box-sizing: border-box;
+	position: relative
+}
+
+.am-message .am-icon {
+	display: block
+}
+
+.am-message-main {
+	font-size: 20px;
+	margin: 16px 0 9px;
+	line-height: 28px
+}
+
+.am-message-sub {
+	padding: 0 30px;
+	font-size: 14px;
+	line-height: 19px;
+	margin-top: 6px;
+	color: #999
+}
+
+.am-message-button-wrap {
+	padding: 0 15px
+}
+
+.am-message-button-wrap .mainButton {
+  position: absolute; left: 10px; top:15px; color:rgb(153, 153, 153);
+}
+.am-message-button-wrap .mainButton::before { content: 'ｘ '; font-size: large;}
+.am-message-button-wrap .mainButton.disabled::before{ content: ' '; }
+
+.am-message-button-wrap .a-button:last-child {
+	margin-bottom: 0
+}
+

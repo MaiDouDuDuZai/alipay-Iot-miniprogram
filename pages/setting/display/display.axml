@@ -1,0 +1,8 @@
+<view class="page">
+  <view class="page-section">
+    <view class="page-section-title">设置屏幕亮度</view>
+    <view class="page-section-demo">
+      <slider value="{{brightness}}" max="1" min="0" onChange="sliderChange" step="0.02"/>
+    </view>
+  </view>
+</view>
