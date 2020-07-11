@@ -6,3 +6,6 @@
 # 测试账号
 系统域名：demo.tryyun.net  
 店员账号：12345678901 或 00000000000
+
+# 预览
+![](https://img.alicdn.com/imgextra/i1/120366688/O1CN01P9Ii0F1zH9Ua6RfIn_!!120366688.jpg)
